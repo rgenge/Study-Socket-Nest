@@ -1,0 +1,18 @@
+
+
+const passport = require('passport');
+const FortyTwoStrategy = require('passport-42').Strategy
+
+passport.use(new FortyTwoStrategy({
+  clientID: 'u-s4t2ud-941b73c259f6d553c86a6684f13a7532d9ee7991657547ad9e0e69ec1a37f16d',
+  clientSecret: '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',
+  callbackURL: 'http://localhost:3001/auth/42/callback',
+}));
+
+passport.serializeUser((user : any, done : any) => {
+  done(null, user);
+});
+
+passport.deserializeUser((user : any, done : any) => {
+  done(null, user);
+});

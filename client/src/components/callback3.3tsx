@@ -1,0 +1,22 @@
+import React from 'react';
+import passport from 'passport';
+
+class Callback extends React.Component {
+  render() {
+    // Authenticate the user with Passport.
+    passport.authenticate('42', (err: any, user: any) => {
+      if (err) {
+        // Handle error.
+      } else {
+        // Redirect the user to the appropriate page.
+        window.location.href = '/chat';
+      }
+    })(this.props);
+
+    return (
+      <div>Authenticating...</div>
+    );
+  }
+}
+
+export default Callback;
